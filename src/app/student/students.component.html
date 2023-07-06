@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Qualification (Avg)</th>
+            <th scope="col">Active</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let student of students; index as i" StatusDirective [active]=student.active>
+            <th scope="col">{{ i + 1}}</th>
+            <td>{{student.name}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.birthday | date:'dd-MM-Y'}}</td>
+            <td class="d-flex justify-content-center"><app-star [avgQualification]='student.avgQualification' /></td>
+            <td class="text-center" [ngClass]="!student.active ? 'inactive': ''">
+              <i *ngIf="student.active; else inactive" class="fa-solid fa-user"></i>
+              <ng-template #inactive><i class="fa-solid fa-user-slash"></i></ng-template>
+            </td>
+            <td><i class="fa-solid fa-trash" (click)="deleteStudent(i)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
