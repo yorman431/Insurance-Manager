@@ -1,7 +1,7 @@
 export interface Student {
   name: string,
   lastName: string,
-  birthday?: Date,
+  email?: string,
   active: boolean,
   avgQualification: number
 }

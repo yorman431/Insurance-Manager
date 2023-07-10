@@ -1,4 +1,64 @@
 <div class="container">
+  <form class="row row-cols-lg-auto gx-3 align-items-center" [formGroup]="newStudentForm">
+    <div class="col-12 position-relative">
+      <label for="studentName" class="visually-hidden">Name</label>
+      <input
+        id="studentName"
+        type="text"
+        [ngClass]="{'is-invalid': nameError}"
+        class="form-control"
+        formControlName="name"
+        placeholder="Name"
+        aria-describedby="validationNameFeedback"
+      >
+      <div id="validationNameFeedback" class="invalid-tooltip" *ngIf="nameError"> {{nameError}}</div>
+    </div>
+    <div class="col-12 position-relative">
+      <label for="studentLastName" class="visually-hidden">Last Name</label>
+      <input
+        id="studentLastName"
+        type="text" class="form-control"
+        [ngClass]="{'is-invalid': lastNameError}"
+        formControlName="lastName"
+        placeholder="Last Name"
+        aria-describedby="validationLastNameFeedback"
+      >
+      <div id="validationLastNameFeedback" class="invalid-tooltip" *ngIf="lastNameError"> {{lastNameError}}</div>
+    </div>
+    <div class="col-12 position-relative">
+      <label for="studentEmail" class="visually-hidden">Email</label>
+      <input
+        id="studentEmail"
+        type="text" class="form-control"
+        [ngClass]="{'is-invalid': emailError}"
+        formControlName="email"
+        placeholder="Email"
+        aria-describedby="validationEmailFeedback"
+      >
+      <div id="validationEmailFeedback" class="invalid-tooltip" *ngIf="emailError"> {{emailError}}</div>
+    </div>
+    <div class="col-12 position-relative">
+      <label for="studentAvgQualification" class="visually-hidden">Average Qualification</label>
+      <input
+        id="studentAvgQualification"
+        type="number" class="form-control"
+        [ngClass]="{'is-invalid': avgQualificationError}"
+        formControlName="avgQualification"
+        placeholder="Avg. Qualification (max 5)"
+        aria-describedby="validationAvgQualificationFeedback"
+      >
+      <div id="validationAvgQualificationFeedback" class="invalid-tooltip" *ngIf="avgQualificationError"> {{avgQualificationError}}</div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input id="studentActive" type="checkbox" class="form-check-input" formControlName="active" checked>
+        <label for="studentActive" class="form-check-label">Is Active?</label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="addNewStudent()" [disabled]="!newStudentForm.valid">Add</button>
+    </div>
+  </form>
   <div class="row">
     <div class="col-12">
       <table class="table">
@@ -7,7 +67,7 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Lastname</th>
-            <th scope="col">Birthday</th>
+            <th scope="col">Email</th>
             <th scope="col">Qualification (Avg)</th>
             <th scope="col">Active</th>
             <th scope="col"></th>
@@ -18,7 +78,7 @@
             <th scope="col">{{ i + 1}}</th>
             <td>{{student.name}}</td>
             <td>{{student.lastName}}</td>
-            <td>{{student.birthday | date:'dd-MM-Y'}}</td>
+            <td>{{student.email}}</td>
             <td class="d-flex justify-content-center"><app-star [avgQualification]='student.avgQualification' /></td>
             <td class="text-center" [ngClass]="!student.active ? 'inactive': ''">
               <i *ngIf="student.active; else inactive" class="fa-solid fa-user"></i>
