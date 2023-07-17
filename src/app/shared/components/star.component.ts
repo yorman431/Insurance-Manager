@@ -6,11 +6,11 @@ import {Component, Input, OnChanges} from '@angular/core';
   styleUrls: ['star.component.css']
 })
 export class StarComponent implements OnChanges{
-  cropWidth = 75;
+  cropWidth = 80;
   @Input() avgQualification = 0;
   constructor() {}
 
   ngOnChanges() {
-    this.cropWidth = this.avgQualification * 75/5;
+    this.cropWidth = this.avgQualification * 80/5;
   }
 }

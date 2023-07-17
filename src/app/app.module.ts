@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {StudentsComponent} from './student/students.component';
-import {SharedModule} from './shared/shared.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {StudentsModule} from './student/students.module';
+import {StudentsComponent} from './student/components/students/students.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
   ],
   imports: [
     BrowserModule,
-    SharedModule,
-    ReactiveFormsModule
+    BrowserAnimationsModule,
+    StudentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

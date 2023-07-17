@@ -1,0 +1,8 @@
+.inactive {
+ color: #EF5350;
+}
+
+.fa-trash {
+  cursor: pointer;
+  color: #F44336
+}
