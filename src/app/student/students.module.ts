@@ -11,11 +11,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {StudentFormComponent} from './components/studentForm/studentForm.component';
 import {MatIconModule} from '@angular/material/icon';
+import { StudentTableComponent } from './components/studentTable/student-table/student-table.component';
 
 @NgModule({
   declarations: [
     StudentsComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    StudentTableComponent
   ],
   imports: [
     NgStyle,

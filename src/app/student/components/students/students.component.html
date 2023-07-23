@@ -9,79 +9,11 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <table mat-table [dataSource]="students" class="mat-elevation-z8">
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef>#</th>
-          <td mat-cell *matCellDef="let student">{{student.id}}</td>
-        </ng-container>
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let student">{{student.name}}</td>
-        </ng-container>
-        <ng-container matColumnDef="lastName">
-          <th mat-header-cell *matHeaderCellDef>Last Name</th>
-          <td mat-cell *matCellDef="let student">{{student.lastName}}</td>
-        </ng-container>
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef>Email</th>
-          <td mat-cell *matCellDef="let student">{{student.email}}</td>
-        </ng-container>
-        <ng-container matColumnDef="avgQualification">
-          <th mat-header-cell *matHeaderCellDef>Qualification (Avg)</th>
-          <td mat-cell *matCellDef="let student"><app-star [avgQualification]='student.avgQualification' /></td>
-        </ng-container>
-        <ng-container matColumnDef="active">
-          <th mat-header-cell *matHeaderCellDef>Active</th>
-          <td mat-cell *matCellDef="let student" [ngClass]="!student.active ? 'inactive': ''">
-            <mat-icon *ngIf="student.active; else inactive">person</mat-icon>
-            <ng-template #inactive><mat-icon>person_off</mat-icon></ng-template>
-          </td>
-        </ng-container>
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let student">
-            <button mat-icon-button color="primary" (click)="editStudent(student)">
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" (click)="deleteStudent(student.id)">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr mat-row *matRowDef="let row; columns: columns"></tr>
-      </table>
+      <app-student-table
+        [students]="(students | async) || []"
+        (delete) = "deleteStudent($event)"
+        (edit) = "editStudent($event)"
+      />
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="col-12">
-      <table class="table">
-        <thead>
-          <tr class="text-center">
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Lastname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Qualification (Avg)</th>
-            <th scope="col">Active</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="text-center" *ngFor="let student of students; index as i" StatusDirective [active]=student.active>
-            <th scope="col">{{ i + 1}}</th>
-            <td>{{student.name}}</td>
-            <td>{{student.lastName}}</td>
-            <td>{{student.email}}</td>
-            <td class="d-flex justify-content-center"><app-star [avgQualification]='student.avgQualification' /></td>
-            <td class="text-center" [ngClass]="!student.active ? 'inactive': ''">
-              <i *ngIf="student.active; else inactive" class="fa-solid fa-user"></i>
-              <ng-template #inactive><i class="fa-solid fa-user-slash"></i></ng-template>
-            </td>
-            <td><i class="fa-solid fa-trash" (click)="deleteStudent(i)"></i></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div> -->
 </div>
