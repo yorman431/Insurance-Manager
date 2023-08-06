@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import {NgStyle} from '@angular/common';
+import {CommonModule, NgStyle} from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
 import {SharedModule} from '../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
 import {MatInputModule} from '@angular/material/input';
 import {StudentsComponent} from './components/students/students.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -21,7 +20,7 @@ import { StudentTableComponent } from './components/studentTable/student-table/s
   ],
   imports: [
     NgStyle,
-    BrowserModule,
+    CommonModule,
     ReactiveFormsModule,
     MatTableModule,
     MatInputModule,

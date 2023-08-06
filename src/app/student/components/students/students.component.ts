@@ -1,10 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Student} from '../../student';
 import {MatDialog} from '@angular/material/dialog';
 import {StudentFormComponent} from '../studentForm/studentForm.component';
 import {StudentService} from '../../services/student.service';
 import {Observable} from 'rxjs';
-import {NotificationService} from '../../../shared/service/notification.service';
 
 @Component({
   selector: 'app-students',
@@ -14,7 +13,7 @@ import {NotificationService} from '../../../shared/service/notification.service'
 export class StudentsComponent {
   students: Observable<Student[]>
 
-  constructor(private dialog: MatDialog, private studentService: StudentService, private notification: NotificationService) {
+  constructor(private dialog: MatDialog, private studentService: StudentService) {
     this.students = this.studentService.getStudents();
   }
 
