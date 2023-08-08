@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {StudentsComponent} from '../student/components/students/students.component';
-import {CursesComponent} from '../curse/components/curses/curses.component';
-import {SubjectsComponent} from '../subject/components/subjects/subjects.component';
+import {StudentsComponent} from './sections/student/components/students/students.component';
+import {CursesComponent} from './sections/curse/components/curses/curses.component';
+import {SubjectsComponent} from './sections/subject/components/subjects/subjects.component';
 
 @NgModule({
   imports: [
@@ -10,17 +10,17 @@ import {SubjectsComponent} from '../subject/components/subjects/subjects.compone
       {
         path: 'students',
         component: StudentsComponent,
-        loadChildren: () => import('../student/students.module').then((m) => m.StudentsModule)
+        loadChildren: () => import('./sections/student/students.module').then((m) => m.StudentsModule)
       },
       {
         path: 'curses',
         component: CursesComponent,
-        loadChildren: () => import('../curse/curses.module').then((m) => m.CursesModule)
+        loadChildren: () => import('./sections/curse/curses.module').then((m) => m.CursesModule)
       },
       {
         path: 'subjects',
         component: SubjectsComponent,
-        loadChildren: () => import('../subject/subject.module').then((m) => m.SubjectModule)
+        loadChildren: () => import('./sections/subject/subject.module').then((m) => m.SubjectModule)
       },
       {
         path: '**',

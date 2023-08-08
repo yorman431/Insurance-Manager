@@ -1,5 +1,68 @@
 {
-  "students": [],
-  "curses": [],
-  "subjects": []
+  "students": [
+    {
+      "name": "Yorman",
+      "lastName": "Herrera",
+      "email": "yorman@email.com",
+      "active": true,
+      "avgQualification": 5,
+      "id": 1
+    },
+    {
+      "name": "Roy",
+      "lastName": "Quintana",
+      "email": "roy@email.com",
+      "active": true,
+      "avgQualification": 4.2,
+      "id": 3
+    },
+    {
+      "name": "Edgard",
+      "lastName": "Morena",
+      "email": "edgard@email.com",
+      "active": false,
+      "avgQualification": 2.3,
+      "id": 4
+    }
+  ],
+  "curses": [
+    {
+      "name": "Angular",
+      "capacity": 40,
+      "duration": "10 weeks",
+      "active": true,
+      "id": 1
+    },
+    {
+      "name": "Back End",
+      "capacity": 30,
+      "duration": "32 Weeks",
+      "active": false,
+      "id": 2
+    }
+  ],
+  "subjects": [
+    {
+      "name": "Angular",
+      "category": "Develop",
+      "active": true,
+      "id": 1
+    },
+    {
+      "name": "Node JS",
+      "category": "Develop",
+      "active": false,
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "name": "Test",
+      "role": "admin",
+      "token": "asdfkjdfkjdjf",
+      "email": "test@test.com",
+      "password": "1234",
+      "id": 1
+    }
+  ]
 }
