@@ -35,7 +35,7 @@ export class AuthService {
           sessionStorage.setItem('token', authUser.token);
 
         } else {
-          this. notify.error('User Or Password Incorrect')
+          this.notify.error('User Or Password Incorrect')
         }
       },
       error: () => this.notify.error('Error with the server, please contact the admin')
