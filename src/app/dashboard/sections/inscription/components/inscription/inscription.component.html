@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-12">
+      <button mat-flat-button color="primary" (click)="addInscription()">
+        <mat-icon>add</mat-icon>
+        Add Inscription
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-inscription-table
+        [inscriptions]="(inscription$ | async) || []"
+        (delete) = "deleteInscription($event)"
+        (edit) = "editInscription($event)"
+      />
+    </div>
+  </div>
+</div>

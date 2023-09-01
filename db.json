@@ -23,6 +23,14 @@
       "active": false,
       "avgQualification": 2.3,
       "id": 4
+    },
+    {
+      "name": "Frandy",
+      "lastName": "Marin",
+      "email": "frandy@email.com",
+      "active": true,
+      "avgQualification": 5,
+      "id": 5
     }
   ],
   "curses": [
@@ -39,6 +47,13 @@
       "duration": "32 Weeks",
       "active": false,
       "id": 2
+    },
+    {
+      "name": "Java",
+      "capacity": 30,
+      "duration": "12",
+      "active": true,
+      "id": 3
     }
   ],
   "subjects": [
@@ -63,6 +78,57 @@
       "email": "test@test.com",
       "password": "1234",
       "id": 1
+    }
+  ],
+  "inscription": [
+    {
+      "name": "Court 11",
+      "studentId": 1,
+      "curseId": 2,
+      "active": false,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "studentId": 3,
+      "curseId": 2,
+      "name": "Court 766",
+      "active": true
+    },
+    {
+      "id": 3,
+      "studentId": 4,
+      "curseId": 1,
+      "name": "Court 113",
+      "active": true
+    },
+    {
+      "name": "test",
+      "studentId": 1,
+      "curseId": 1,
+      "active": false,
+      "id": 4
+    },
+    {
+      "active": false,
+      "curseId": 1,
+      "name": "test",
+      "studentId": 1,
+      "id": 5
+    },
+    {
+      "name": "Court 7885",
+      "studentId": 4,
+      "curseId": 1,
+      "active": true,
+      "id": 6
+    },
+    {
+      "name": "notification Test",
+      "studentId": 1,
+      "curseId": 1,
+      "active": true,
+      "id": 8
     }
   ]
 }

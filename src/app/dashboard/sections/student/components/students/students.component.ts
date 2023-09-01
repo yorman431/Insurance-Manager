@@ -4,6 +4,8 @@ import {MatDialog} from '@angular/material/dialog';
 import {StudentFormComponent} from '../studentForm/studentForm.component';
 import {StudentService} from '../../services/student.service';
 import {Observable} from 'rxjs';
+import {Store} from '@ngrx/store';
+import {selectStudentSelector} from '../../../../../store/student/student.selector';
 
 @Component({
   selector: 'app-students',
@@ -13,9 +15,12 @@ import {Observable} from 'rxjs';
 export class StudentsComponent {
   students: Observable<Student[]>
 
-  constructor(private dialog: MatDialog, private studentService: StudentService) {
-    this.studentService.loadStudents();
-    this.students = this.studentService.getStudents()
+  constructor(
+    private dialog: MatDialog,
+    private studentService: StudentService,
+    private store: Store) {
+      this.studentService.loadStudents();
+      this.students = this.store.select(selectStudentSelector);
   }
 
   deleteStudent(student: Student): void {

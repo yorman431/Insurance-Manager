@@ -12,6 +12,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { EffectsModule } from '@ngrx/effects';
+import { CurseEffects } from './store/curse.effects';
+import {StoreModule} from '@ngrx/store';
+import {curseFeature} from './store/curse.reducer';
 
 
 
@@ -33,6 +37,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     ReactiveFormsModule,
     MatCheckboxModule,
+    StoreModule.forFeature(curseFeature),
+    EffectsModule.forFeature([CurseEffects]),
   ],
   exports:[
     MatTableModule,

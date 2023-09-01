@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {MatDialog} from '@angular/material/dialog';
 import {CurseFormComponent} from '../curse-form/curse-form.component';
 import {CurseService} from '../../services/curse.service';
+import {Store} from '@ngrx/store';
+import {selectCurseState} from '../../store/curse.selectors';
 
 @Component({
   selector: 'app-curses',
@@ -12,9 +14,12 @@ import {CurseService} from '../../services/curse.service';
 })
 export class CursesComponent {
   curses: Observable<Curse[]>
-  constructor(private dialog: MatDialog, private curseService: CurseService) {
-    this.curseService.loadCurses();
-    this.curses = this.curseService.getCurses();
+  constructor(
+    private dialog: MatDialog,
+    private curseService: CurseService,
+    private store: Store) {
+      this.curseService.loadCurses();
+      this.curses = this.store.select(selectCurseState);
   }
 
   deleteCurse(curse: Curse): void {
