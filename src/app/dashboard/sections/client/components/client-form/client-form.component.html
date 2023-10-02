@@ -1,0 +1,91 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<mat-dialog-content [formGroup]="newClientForm">
+  <div class="row">
+    <div class="col-12">
+      <mat-form-field class="w-100">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          type="text"
+          [ngClass]="{'is-invalid': nameError}"
+          formControlName="name"
+        >
+        <mat-error *ngIf="nameError">{{nameError}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100">
+        <mat-label>LastName</mat-label>
+        <input
+          matInput
+          type="text"
+          [ngClass]="{'is-invalid': lastNameError}"
+          formControlName="lastName"
+        >
+        <mat-error *ngIf="lastNameError">{{lastNameError}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="w-100">
+        <mat-label>Document</mat-label>
+        <mat-select formControlName="docType" [ngClass]="{'is-invalid': docTypeError}">
+          <mat-option value="ID">ID</mat-option>
+          <mat-option value="RIF">RIF</mat-option>
+          <mat-option value="RIF-G">RIF-Gob</mat-option>
+          <mat-option value="Passport">Passport</mat-option>
+        </mat-select>
+        <mat-error *ngIf="docTypeError">{{docTypeError}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-8">
+      <mat-form-field class="w-100">
+        <mat-label>Number</mat-label>
+        <input
+          matInput
+          type="text"
+          [ngClass]="{'is-invalid': docNumberError}"
+          formControlName="docNumber"
+        >
+        <mat-error *ngIf="docNumberError">{{docNumberError}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100">
+        <mat-label>Telephone</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="telephone"
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          [ngClass]="{'is-invalid': emailError}"
+          formControlName="email"
+        >
+        <mat-error *ngIf="emailError">{{emailError}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-checkbox formControlName="active" checked>Is Active?</mat-checkbox>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close>Cancel</button>
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="!newClientForm.valid"
+    (click)="onSubmit()"
+  >
+    Add
+  </button>
+</mat-dialog-actions>
+

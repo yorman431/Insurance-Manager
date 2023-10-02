@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {StudentsComponent} from './sections/student/components/students/students.component';
-import {CursesComponent} from './sections/curse/components/curses/curses.component';
+import {ClientsComponent} from './sections/client/components/clients/clients.component';
 import {SubjectsComponent} from './sections/subject/components/subjects/subjects.component';
 import {InscriptionComponent} from './sections/inscription/components/inscription/inscription.component';
 
@@ -14,9 +14,9 @@ import {InscriptionComponent} from './sections/inscription/components/inscriptio
         loadChildren: () => import('./sections/student/students.module').then((m) => m.StudentsModule)
       },
       {
-        path: 'curses',
-        component: CursesComponent,
-        loadChildren: () => import('./sections/curse/curses.module').then((m) => m.CursesModule)
+        path: 'clients',
+        component: ClientsComponent,
+        loadChildren: () => import('./sections/client/client.module').then((m) => m.ClientModule)
       },
       {
         path: 'subjects',

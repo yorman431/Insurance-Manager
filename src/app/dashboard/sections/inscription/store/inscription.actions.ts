@@ -2,7 +2,7 @@ import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import {Inscription, InscriptionRelation} from "../inscription";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Student} from "../../student/student";
-import {Curse} from "../../curse/curse";
+import {Client} from "../../client/client";
 
 export const InscriptionActions = createActionGroup({
   source: 'Inscription',
@@ -16,7 +16,7 @@ export const InscriptionActions = createActionGroup({
     'Load Students Failure': props<{ error: HttpErrorResponse }>(),
 
     'Load Curses': emptyProps(),
-    'Load Curses Success': props<{ curses: Curse[]}>(),
+    'Load Curses Success': props<{ curses: Client[]}>(),
     'Load Curses Failure': props<{ error: HttpErrorResponse }>(),
 
     'Create Inscription': props<{ payload: Inscription}>(),

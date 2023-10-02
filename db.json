@@ -33,27 +33,26 @@
       "id": 5
     }
   ],
-  "curses": [
+  "clients": [
     {
-      "name": "Angular",
-      "capacity": 40,
-      "duration": "10 weeks",
+      "name": "Yorman",
+      "lastName": "Herrera",
+      "docType": "ID",
+      "docNumber": "20756701",
+      "telephone": "+56930557053",
+      "email": "yormanh@icloud.com",
       "active": true,
       "id": 1
     },
     {
-      "name": "Back End",
-      "capacity": 30,
-      "duration": "32 Weeks",
-      "active": false,
-      "id": 2
-    },
-    {
-      "name": "Java",
-      "capacity": 30,
-      "duration": "12",
+      "name": "Jaime",
+      "lastName": "Herrera",
+      "docType": "ID",
+      "docNumber": "5139590",
+      "telephone": "04166188097",
+      "email": "jaimeherrera08@gmail.com",
       "active": true,
-      "id": 3
+      "id": 2
     }
   ],
   "subjects": [
