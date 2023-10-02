@@ -2,14 +2,14 @@ import { createFeature, createReducer, on } from '@ngrx/store';
 import { InscriptionActions } from './inscription.actions';
 import {InscriptionRelation} from "../inscription";
 import {Student} from "../../student/student";
-import {Curse} from "../../curse/curse";
+import {Client} from "../../client/client";
 
 export const inscriptionFeatureKey = 'inscription';
 
 export interface State {
   data: InscriptionRelation[],
   students: Student[],
-  curses: Curse[],
+  curses: Client[],
   error: unknown
 }
 

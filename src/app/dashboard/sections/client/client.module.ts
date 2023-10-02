@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgStyle } from '@angular/common';
-import { CursesComponent } from './components/curses/curses.component';
+import { ClientsComponent } from './components/clients/clients.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { CurseTableComponent } from './components/curse-table/curse-table.component';
+import { ClientTableComponent } from './components/client-table/client-table.component';
 import {MatTableModule} from '@angular/material/table';
 import {SharedModule} from '../../../shared/shared.module';
-import { CurseFormComponent } from './components/curse-form/curse-form.component';
+import { ClientFormComponent } from './components/client-form/client-form.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { EffectsModule } from '@ngrx/effects';
-import { CurseEffects } from './store/curse.effects';
+import { ClientEffects } from './store/client.effects';
 import {StoreModule} from '@ngrx/store';
-import {curseFeature} from './store/curse.reducer';
+import {clientFeature} from './store/client.reducer';
+import { MatSelectModule } from "@angular/material/select";
 
 
 
 @NgModule({
   declarations: [
-    CursesComponent,
-    CurseTableComponent,
-    CurseFormComponent
+    ClientsComponent,
+    ClientTableComponent,
+    ClientFormComponent
   ],
   imports: [
     NgStyle,
@@ -37,12 +38,13 @@ import {curseFeature} from './store/curse.reducer';
     MatInputModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    StoreModule.forFeature(curseFeature),
-    EffectsModule.forFeature([CurseEffects]),
+    StoreModule.forFeature( clientFeature ),
+    EffectsModule.forFeature( [ ClientEffects ] ),
+    MatSelectModule,
   ],
   exports:[
     MatTableModule,
-    CursesComponent
+    ClientsComponent
   ]
 })
-export class CursesModule { }
+export class ClientModule { }

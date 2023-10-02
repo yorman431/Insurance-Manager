@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-12">
+      <button mat-flat-button color="primary" (click)="addClient()">
+        <mat-icon>add</mat-icon>
+        Add Client
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-client-table
+        [clients]="(clients | async) || []"
+        (delete) = "deleteClient($event)"
+        (edit) = "editClient($event)"
+      />
+    </div>
+  </div>
+</div>
+

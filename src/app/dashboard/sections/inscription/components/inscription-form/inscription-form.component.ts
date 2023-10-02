@@ -6,7 +6,7 @@ import {Store} from "@ngrx/store";
 import {InscriptionActions} from "../../store/inscription.actions";
 import {Observable} from "rxjs";
 import {Student} from "../../../student/student";
-import {Curse} from "../../../curse/curse";
+import {Client} from "../../../client/client";
 import {selectCurses, selectStudents} from "../../store/inscription.selectors";
 
 @Component({
@@ -30,7 +30,7 @@ export class InscriptionFormComponent implements OnInit{
     active: [true, Validators.required],
   });
   students$: Observable<Student[]>
-  curses$: Observable<Curse[]>
+  curses$: Observable<Client[]>
 
   constructor(
     private fb: FormBuilder,

@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {InscriptionService} from "../services/inscription.service";
 import {Student} from "../../student/student";
 import {environment} from "../../../../../environment/environment";
-import {Curse} from "../../curse/curse";
+import {Client} from "../../client/client";
 import {Store} from "@ngrx/store";
 import {NotificationService} from "../../../../shared/service/notification.service";
 
@@ -133,8 +133,8 @@ export class InscriptionEffects {
   private loadStudents(): Observable<Student[]> {
     return this.httpClient.get<Student[]>(environment.baseApiUrl + '/students')
   }
-  private loadCurses(): Observable<Curse[]> {
-    return this.httpClient.get<Curse[]>(environment.baseApiUrl + '/curses')
+  private loadCurses(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>(environment.baseApiUrl + '/curses')
   }
 
 }

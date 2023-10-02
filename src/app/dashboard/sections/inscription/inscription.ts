@@ -1,5 +1,5 @@
 import {Student} from "../student/student";
-import {Curse} from "../curse/curse";
+import {Client} from "../client/client";
 
 export interface Inscription {
   id: number,
@@ -11,5 +11,5 @@ export interface Inscription {
 
 export interface InscriptionRelation extends Inscription {
   student: Student,
-  curse: Curse
+  curse: Client
 }
