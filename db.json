@@ -55,17 +55,12 @@
       "id": 2
     }
   ],
-  "subjects": [
+  "companies": [
     {
-      "name": "Angular",
-      "category": "Develop",
+      "code": 85,
+      "name": "Seguros Caracas",
+      "country": "Caracas",
       "active": true,
-      "id": 1
-    },
-    {
-      "name": "Node JS",
-      "category": "Develop",
-      "active": false,
       "id": 2
     }
   ],

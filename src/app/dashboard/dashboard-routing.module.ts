@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {StudentsComponent} from './sections/student/components/students/students.component';
 import {ClientsComponent} from './sections/client/components/clients/clients.component';
-import {SubjectsComponent} from './sections/subject/components/subjects/subjects.component';
+import {CompanyComponent} from './sections/company/components/company/company.component';
 import {InscriptionComponent} from './sections/inscription/components/inscription/inscription.component';
 
 @NgModule({
@@ -19,9 +19,9 @@ import {InscriptionComponent} from './sections/inscription/components/inscriptio
         loadChildren: () => import('./sections/client/client.module').then((m) => m.ClientModule)
       },
       {
-        path: 'subjects',
-        component: SubjectsComponent,
-        loadChildren: () => import('./sections/subject/subject.module').then((m) => m.SubjectModule)
+        path: 'companies',
+        component: CompanyComponent,
+        loadChildren: () => import('./sections/company/company.module').then((m) => m.CompanyModule)
       },
       {
         path: 'inscription',
