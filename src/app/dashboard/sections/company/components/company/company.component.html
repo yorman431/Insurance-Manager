@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-12">
+            <button mat-flat-button color="primary" (click)="addCompany()">
+                <mat-icon>add</mat-icon>
+                Add Company
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-company-table
+                [companies]="(companies | async) || []"
+                (delete) = "deleteCompany($event)"
+                (edit) = "editCompany($event)"
+            />
+        </div>
+    </div>
+</div>
+

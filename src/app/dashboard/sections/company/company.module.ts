@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SubjectsComponent } from './components/subjects/subjects.component';
-import { SubjectFormComponent } from './components/subject-form/subject-form.component';
-import { SubjectTableComponent } from './components/subject-table/subject-table.component';
+import { CompanyComponent } from './components/company/company.component';
+import { CompanyFormComponent } from './components/company-form/company-form.component';
+import { CompanyTableComponent } from './components/company-table/company-table.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
@@ -14,9 +14,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
-    SubjectsComponent,
-    SubjectFormComponent,
-    SubjectTableComponent
+    CompanyComponent,
+    CompanyFormComponent,
+    CompanyTableComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +29,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatCheckboxModule,
   ],
-  exports: [SubjectsComponent]
+  exports: [CompanyComponent]
 })
-export class SubjectModule { }
+export class CompanyModule { }
